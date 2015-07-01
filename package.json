@@ -28,7 +28,7 @@
             "jquery": "2.x"
         },
         "include": ["dist/*"],
-        "main": "jquery.sp-uri.min.js"
+        "main": "dist/jquery.sp-uri.min.js"
     }
 }
 
