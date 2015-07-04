@@ -55,51 +55,7 @@
             var value = params[name];
             
             return value !== undefined? value: '';
-        },
-        
-        /**
-         * Parses and obtains information about a URI.
-         * 
-         * Example:
-         * ```JavaScript
-         * // the below code prints the following info:
-         * //
-         * // protocol: 'http'
-         * // username: 'perico'
-         * // password: 'palotes'
-         * // hostname: 'test.domain.com'
-         * // port    : '1574'
-         * // pathname: '/path/to/somewhere'
-         * // params  : {'param 1': 'first param', 'param 2': 'second param'}
-         * // hash    : 'tag'
-         * 
-         * var info = $.spUri(
-         *      'parse',
-         *      'http://perico:palotes@test.domain.com:1574/path/to/somewhere' +
-         *      '?param%201=first%20param&param%202=second%20param#tag'
-         * );
-         * console.log(info);
-         * ```
-         * 
-         * @param {String} uri URI
-         * 
-         * @return {Object}
-         */
-        'parse': function (uri) {
-            var parser = document.createElement('a');
-            parser.href = uri;
-
-            return {
-                protocol: parser.protocol.replace(/:$/, ''),
-                username: parser.username,
-                password: parser.password,
-                hostname: parser.hostname,
-                port: parser.port,
-                pathname: parser.pathname,
-                params: parseQuery(parser.search),
-                hash: parser.hash.replace(/^#+/, '')
-            };
-        },
+        }
     };
     
     /**
