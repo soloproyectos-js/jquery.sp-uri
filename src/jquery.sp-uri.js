@@ -50,7 +50,7 @@
          * 
          * @return {String}
          */
-        'getParam': function (name) {
+        'get': function (name) {
             var params = parseQuery(location.search);
             var value = params[name];
             
