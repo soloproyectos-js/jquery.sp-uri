@@ -39,6 +39,47 @@
     }
     
     /**
+     * Appends parameters to a given URI.
+     * 
+     * @param {String} uri    URI
+     * @param {Object} params Parameters
+     * 
+     * @return {String}
+     */
+    function appendParams(uri, params) {
+        var ret = uri;
+        
+        // removes the tag section from the URI string
+        var uriTag = '';
+        var pos = ret.lastIndexOf('#');
+        if (pos > 0) {
+            uriTag = ret.substring(pos + 1);
+            ret = ret.substring(0, pos);
+        }
+        
+        // removes the parameters section from the URI string
+        var uriParams = '';
+        var pos = ret.lastIndexOf('?');
+        if (pos > 0) {
+            uriParams = ret.substring(pos + 1);
+            ret = ret.substring(0, pos);
+        }
+        
+        // merges and appends the parameters to the URI string
+        uriParams = $.param($.extend(parseQuery(uriParams, params), params));
+        if (uriParams.length > 0) {
+            ret += '?' + uriParams;
+        }
+        
+        // appends the tag section to the URI string
+        if (uriTag.length > 0) {
+            ret += '#' + uriTag;
+        }
+        
+        return ret;
+    }
+    
+    /**
      * Available methods
      * @var {Object}
      */
@@ -62,6 +103,27 @@
             var value = params[name];
             
             return value !== undefined? value: '';
+        },
+        
+        /**
+         * Opens a new page in the same window.
+         * 
+         * @param {String}          uri    URI (not required)
+         * @param {Object.<String>} params Parameters (not required)
+         * 
+         * @return {Void}
+         */
+        'open': function (uri, params) {
+            // parses arguments
+            if ($.type(uri) !== 'string') {
+                uri = location.href;
+                params = uri;
+            }
+            if (params === undefined) {
+                params = [];
+            }
+            
+            window.open(appendParams(uri, params), '_self');
         }
     };
     
