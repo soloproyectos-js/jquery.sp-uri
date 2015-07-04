@@ -46,6 +46,13 @@
         /**
          * Gets a parameter value from the current URI.
          * 
+         * This function returns an empty string if the parameter is not present.
+         * 
+         * For example:
+         * ```JavaScript
+         * console.log($.spUri('get', 'id'));
+         * ```
+         * 
          * @param {String} name Parameter name
          * 
          * @return {String}
