@@ -116,8 +116,8 @@
         'open': function (uri, params) {
             // parses arguments
             if ($.type(uri) !== 'string') {
-                uri = location.href;
                 params = uri;
+                uri = location.href;
             }
             if (params === undefined) {
                 params = [];
