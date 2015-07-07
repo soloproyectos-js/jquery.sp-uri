@@ -66,7 +66,7 @@
         }
         
         // merges and appends the parameters to the URI string
-        uriParams = $.param($.extend(parseQuery(uriParams, params), params));
+        uriParams = $.param(params);
         if (uriParams.length > 0) {
             ret += '?' + uriParams;
         }
