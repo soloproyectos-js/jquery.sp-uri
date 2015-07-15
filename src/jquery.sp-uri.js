@@ -2,7 +2,7 @@
  * jQuery.spUri - An URI utility plugin.
  *
  * This plugin requires: 
- *      1. jQuery >= 2.1.3
+ *      1. jQuery ~2.0
  *
  * @author    Gonzalo Chumillas <gchumillas@email.com>
  * @license   https://github.com/soloproyectos-js/jquery.sp-uri/blob/master/LICENSE MIT License
@@ -12,9 +12,9 @@
     /**
      * Parses a query string and retrieves the parameters.
      * 
-     * @param {String} query Query string
+     * @param {string} query Query string
      * 
-     * @return {Object.<String, String>}
+     * @return {Object.<string, string>}
      */
     function parseQuery(query) {
         var ret = {};
@@ -41,10 +41,10 @@
     /**
      * Appends parameters to a given URI.
      * 
-     * @param {String} uri    URI
+     * @param {string} uri    URI
      * @param {Object} params Parameters
      * 
-     * @return {String}
+     * @return {string}
      */
     function appendParams(uri, params) {
         var ret = uri;
@@ -94,9 +94,9 @@
          * console.log($.spUri('get', 'id'));
          * ```
          * 
-         * @param {String} name Parameter name
+         * @param {string} name Parameter name
          * 
-         * @return {String}
+         * @return {string}
          */
         'get': function (name) {
             var params = parseQuery(location.search);
@@ -108,10 +108,10 @@
         /**
          * Opens a new page in the same window.
          * 
-         * @param {String}          uri    URI (not required)
-         * @param {Object.<String>} params Parameters (not required)
+         * @param {string}          uri    URI (not required)
+         * @param {Object.<string>} params Parameters (not required)
          * 
-         * @return {Void}
+         * @return {void}
          */
         'open': function (uri, params) {
             // parses arguments
@@ -130,10 +130,10 @@
     /**
      * Registers plugin.
      * 
-     * @param {String} methodName Method name
-     * @param {Mixed}  args,...   Additional arguments (not required)
+     * @param {string} methodName Method name
+     * @param {mixed}  args,...   Additional arguments (not required)
      * 
-     * @return {Mixed}
+     * @return {mixed}
      */
     $.spUri = function (methodName, args) {
         var method = methods[methodName];
