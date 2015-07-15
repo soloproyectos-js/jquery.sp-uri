@@ -5,8 +5,8 @@
  *      1. jQuery >= 2.1.3
  *
  * @author    Gonzalo Chumillas <gchumillas@email.com>
- * @license   https://github.com/wirexmedia/jquery.uri/blob/master/LICENSE MIT License
- * @link      https://github.com/wirexmedia/jquery.uri
+ * @license   https://github.com/soloproyectos-js/jquery.sp-uri/blob/master/LICENSE MIT License
+ * @link      https://github.com/soloproyectos-js/jquery.sp-uri
  */
 (function ($) {
     /**
