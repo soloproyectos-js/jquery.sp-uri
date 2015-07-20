@@ -96,13 +96,11 @@
          * 
          * @param {string} name Parameter name
          * 
-         * @return {string}
+         * @return {string|undefined}
          */
         'get': function (name) {
             var params = parseQuery(location.search);
-            var value = params[name];
-            
-            return value !== undefined? value: '';
+            return params[name];
         },
         
         /**
